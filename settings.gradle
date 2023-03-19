@@ -1,0 +1,6 @@
+rootProject.name = 'JMP-REST'
+include 'dto'
+include 'service-api'
+include 'cloud-service-impl'
+include 'service-rest'
+
