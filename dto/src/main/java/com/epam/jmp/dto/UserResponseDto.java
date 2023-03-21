@@ -1,6 +1,8 @@
 package com.epam.jmp.dto;
 
-public class UserResponseDto {
+import org.springframework.hateoas.RepresentationModel;
+
+public class UserResponseDto extends RepresentationModel<UserResponseDto> {
     private Long id;
     private String name;
     private String surname;

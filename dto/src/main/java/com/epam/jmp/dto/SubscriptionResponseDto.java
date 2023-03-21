@@ -1,6 +1,8 @@
 package com.epam.jmp.dto;
 
-public class SubscriptionResponseDto {
+import org.springframework.hateoas.RepresentationModel;
+
+public class SubscriptionResponseDto extends RepresentationModel<SubscriptionResponseDto> {
     private Long id;
     private Long userId;
     private String startDate;
