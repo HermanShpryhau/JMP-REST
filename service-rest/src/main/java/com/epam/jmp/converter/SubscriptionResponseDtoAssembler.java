@@ -24,7 +24,9 @@ public class SubscriptionResponseDtoAssembler
         SubscriptionResponseDto dto = new SubscriptionResponseDto();
         dto.setId(entity.getId());
         dto.setUserId(entity.getId());
-        dto.setStartDate(entity.getStartDate().format(DateTimeFormatter.ISO_DATE));
+        if (entity.getStartDate() != null){
+            dto.setStartDate(entity.getStartDate().format(DateTimeFormatter.ISO_DATE));
+        }
 
         dto.add(linkTo(methodOn(UserController.class).getById(entity.getId())).withRel("user"));
 

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -40,6 +41,7 @@ public class SubscriptionController {
     @PostMapping
     public SubscriptionResponseDto create(@RequestBody SubscriptionRequestDto subscriptionRequestDto) {
         Subscription subscription = subscriptionRequestDtoConverter.convert(subscriptionRequestDto);
+        subscription.setStartDate(LocalDate.now());
         subscription = subscriptionService.save(subscription);
         return subscriptionResponseDtoAssembler.toModel(subscription);
     }
